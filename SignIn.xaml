@@ -1,0 +1,44 @@
+﻿<Page x:Class="Cake.SignIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cake"
+        mc:Ignorable="d"
+        Title="SignIn" Height="768" Width="1366">
+    <Grid x:Name="MainWindow1" Background="#FF581685" Height="771" VerticalAlignment="Top" Margin="0,0,0,-3">
+        <Grid.RowDefinitions>
+          
+            <RowDefinition Height="174*"/>
+            <RowDefinition Height="369*"/>
+            <RowDefinition Height="194*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="56*"/>
+            <ColumnDefinition Width="669*"/>
+            <ColumnDefinition Width="78*"/>
+            <ColumnDefinition Width="255*"/>
+            <ColumnDefinition Width="300"/>
+        </Grid.ColumnDefinitions>
+        <Ellipse HorizontalAlignment="Left" Height="661" Margin="16,34,0,0" VerticalAlignment="Top" Width="658" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="3">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="img/17.jpg" Stretch="UniformToFill"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="294" VerticalAlignment="Top" Width="244" Margin="7,74,0,0" Grid.Column="3" Grid.Row="1">
+
+            <Button Template="{StaticResource MainWindow}" x:Name="SignInButton"  Content="войти" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="242" Canvas.Left="1" Canvas.Top="110" Foreground="White" FontSize="30" FontFamily="/Cake;component/#mr_ITCSerifGothic" Background="{x:Null}" Click="SignIn_Click"/>
+
+            <TextBox Style="{StaticResource Textbox}"  x:Name="Password_TextBox"  HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="57"  TextWrapping="Wrap" Text="пароль" VerticalAlignment="Top" Width="241"   Foreground="White" FontSize="40"  MaxLines="16" MinLines="5"  FontFamily="/Cake;component/#mr_ITCSerifGothic" Canvas.Left="1" Canvas.Top="55" TextDecorations="Underline" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" TextChanged="Password_TextChanged"/>
+            <TextBox Style="{StaticResource Textbox}"  x:Name="Login_TextBox" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="55" TextWrapping="Wrap" Text="логин" VerticalAlignment="Top" Width="244"  Foreground="White" FontSize="40"  MaxLines="16" MinLines="4"  FontFamily="/Cake;component/#mr_ITCSerifGothic" Canvas.Top="1" TextDecorations="Underline" TextChanged="Login_TextChanged" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}"/>
+
+            <Label Content="или" HorizontalContentAlignment="Center" Height="32" Canvas.Left="-1" Canvas.Top="154" Width="244" Foreground="White" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="15" RenderTransformOrigin="0.475,0.938"/>
+
+            <Button Template="{StaticResource MainWindow}" x:Name="CreateNewAcc" Content="создать новый аккаунт" HorizontalAlignment="Left" Height="46" VerticalAlignment="Top" Width="243" RenderTransformOrigin="0.502,1.536" Foreground="White"  FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="20" Background="{x:Null}" Canvas.Top="184" BorderBrush="{x:Null}" Click="CreateNewAcc_Click"/>
+
+        </Canvas>
+        <Label Grid.ColumnSpan="4" Content="КОНДИТЕРСКАЯ" Grid.Column="1" HorizontalAlignment="Left" Height="93" Margin="663,82,0,0" VerticalAlignment="Top" Width="441" Background="{x:Null}" Foreground="White" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="60" Grid.RowSpan="2"/>
+        <Border CornerRadius="20" BorderThickness="1" Grid.ColumnSpan="4" Grid.Column="1" HorizontalAlignment="Left" Height="6" Margin="664,3,0,0" Grid.Row="1" VerticalAlignment="Top" Width="428" Background="White"/>
+    </Grid>
+</Page>

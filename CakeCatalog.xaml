@@ -1,0 +1,154 @@
+﻿<Page x:Class="Cake.Properties.CakeCatalog"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cake"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="CakeCatalog">
+
+    <Grid Background="#FFFD7C7C">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="42*"/>
+            <ColumnDefinition Width="126*"/>
+            <ColumnDefinition Width="117*"/>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="114*"/>
+            <ColumnDefinition Width="129*"/>
+            <ColumnDefinition Width="86*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="73*"/>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="24*"/>
+        </Grid.RowDefinitions>
+        <Button Template="{StaticResource HelloArnold}" x:Name="Back_Button" Content="назад" HorizontalAlignment="Left" Height="71" Margin="33,7,0,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" RenderTransformOrigin="-3.289,-0.479" Background="{x:Null}" BorderBrush="{x:Null}" Grid.RowSpan="2" Grid.ColumnSpan="2" Click="Back_Button_Click"/>
+        <Button Template="{StaticResource HelloArnold}" x:Name="GoOut_Button" Content="выйти" HorizontalAlignment="Left" Height="71" Margin="188,12,-49,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Grid.RowSpan="2" Grid.Column="5" Grid.ColumnSpan="2" Click="GoOut_Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="55" Margin="52,51,0,0" VerticalAlignment="Top" Width="33" Source="pack://application:,,,/img/str.png" RenderTransformOrigin="-1.844,0.86" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.627"/>
+                    <TranslateTransform X="82.835" Y="-127.296"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button Template="{StaticResource HelloArnold}" x:Name="Main_Button" Content="на главную" HorizontalAlignment="Left" Height="71" Margin="149,9,0,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="3" Click="Main_Button_Click"/>
+        <Label HorizontalAlignment="Center" Content="т&#xD;&#xA;о&#xD;&#xA;р&#xD;&#xA;т&#xD;&#xA;ы&#xD;&#xA;" Margin="32,185,49,74" FontFamily="/Cake;component/#mr_ITCSerifGothic" Foreground="White" FontSize="50" Width="57" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" Height="368" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3"/>
+        <Button Template="{StaticResource HelloArnold}" x:Name="Main_Button_Copy" Content="к заказу" HorizontalAlignment="Left" Height="71" Margin="14,0,0,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <Button Template="{StaticResource HelloArnold}" x:Name="Bans_Button" Content="в&#xD;&#xA;ы&#xD;&#xA;п&#xD;&#xA;е&#xD;&#xA;ч&#xD;&#xA;к&#xD;&#xA;а" HorizontalAlignment="Left" Height="266" Margin="74,21,0,0" VerticalAlignment="Top" Width="66" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" RenderTransformOrigin="0.653,3.38" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1" Grid.Column="6" Grid.RowSpan="2" Click="Bans_Button_Click"/>
+        <Button Template="{StaticResource HelloArnold}" x:Name="Macarons_Button" Content="м&#xD;&#xA;а&#xD;&#xA;к&#xD;&#xA;а&#xD;&#xA;р&#xD;&#xA;о&#xD;&#xA;н&#xD;&#xA;с" HorizontalAlignment="Left" Height="304" Margin="74,137,0,0" VerticalAlignment="Top" Width="64" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" RenderTransformOrigin="0.653,3.38" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="2" Grid.Column="6" Grid.RowSpan="3" Click="Macarons_Button_Click"/>
+
+        <Button Margin="249,39,17,182" BorderBrush="{x:Null}" Background="{x:Null}" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2">
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/3.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                                     VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Margin="23,2,9,0" BorderBrush="{x:Null}" Background="{x:Null}" Grid.Row="2" Grid.Column="1">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/5.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Margin="249,184,17,4" BorderBrush="{x:Null}" Background="{x:Null}" Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/8.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Margin="131,39,15,182" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="1.814,0.582" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/17.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Margin="11,217,27,4" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="1.814,0.582" Grid.Row="1" Grid.Column="5" Grid.RowSpan="2">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/20.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Margin="135,180,11,8" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="1.814,0.582" Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/11.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Page>

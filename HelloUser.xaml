@@ -1,0 +1,48 @@
+﻿<Page x:Class="Cake.HelloUser"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cake"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Height="768" Width="1366"
+      Title="HelloUser">
+
+    <!--всм без имени, у тебя же имя есть чего ты грид обижаешь, но ты можешь его не знать(то есть не давать имя)-->
+    <Grid x:Name="HelloUser1" Background="#FFF7C965">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48*"/>
+            <RowDefinition Height="49*"/>
+            <RowDefinition Height="31*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="195*"/>
+            <ColumnDefinition Width="555*"/>
+            <ColumnDefinition Width="616*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Fill="#FF565687" HorizontalAlignment="Left" Height="363" Margin="91,263,0,0" VerticalAlignment="Top" Width="928" RadiusY="191" RadiusX="191" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+
+        <Image HorizontalAlignment="Left" Height="748" Margin="507,23,-86,-3" VerticalAlignment="Top" Width="750" Source="pack://application:,,,/img/3.png" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="3"/>
+        <Label Content="Привет," HorizontalAlignment="Left" Height="110" Margin="132,47,0,0" VerticalAlignment="Top" Width="284" FontSize="60" FontFamily="/Cake;component/#mr_ITCSerifGothic" Grid.ColumnSpan="2"/>
+        <TextBox Name="User_TextBox" HorizontalAlignment="Left" Height="78" Margin="80,53,0,0" TextWrapping="Wrap" Text="Пользователь" VerticalAlignment="Top" Width="536" FontSize="60" FontWeight="Bold" FontFamily="/Cake;component/#mr_ITCSerifGothic" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label Content="Чего изволите?" HorizontalAlignment="Left" Height="84" Margin="40,137,0,0" VerticalAlignment="Top" Width="369" FontSize="50" RenderTransformOrigin="0.416,0.202" FontFamily="/Cake;component/#mr_ITCSerifGothic" Background="{x:Null}" Foreground="Black" Grid.Column="1"/>
+        <Button  Template="{StaticResource HelloArnold}" Name="GoOut_Button" Content="выйти" Height="50" Margin="445,35,28,0" VerticalAlignment="Top" FontSize="30" Foreground="Black" RenderTransformOrigin="0.501,-0.011" FontFamily="/Cake;component/#mr_ITCSerifGothic" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="2" Click="GoOut_Button_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-1.73"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.031"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <!--Ну разве не проще? сетка же нормально стоит нет тебе надо пообъединять все и потом маргинами отспу делать-->
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Width="546" Grid.Column="1" Grid.Row="1">
+            <Button Template="{StaticResource HelloArnold}" HorizontalContentAlignment="Center" Name="MyProfile_Button" Content="Мой профиль" HorizontalAlignment="Left" Height="93" VerticalAlignment="Top" Width="542" FontSize="50" Foreground="White" IsCancel="True" FontFamily="/Cake;component/#mr_ITCSerifGothic" Background="{x:Null}" BorderBrush="{x:Null}" Click="MyProfile_Button_Click"/>
+            <Button Template="{StaticResource HelloArnold}" HorizontalContentAlignment="Center" x:Name="catalog_Button" Content="Каталог" HorizontalAlignment="Left" Height="93" VerticalAlignment="Top" Width="539" FontSize="50" Foreground="White" FontFamily="/Cake;component/#mr_ITCSerifGothic" Background="{x:Null}" BorderBrush="{x:Null}" Click="catalog_Button_Click" />
+            <Button Template="{StaticResource HelloArnold}" HorizontalContentAlignment="Center" x:Name="Collect_buttom" Content="Собрать вкусняшку" HorizontalAlignment="Left" Height="93" VerticalAlignment="Top" Width="545" FontSize="50" Foreground="White" RenderTransformOrigin="0.501,-0.011" FontFamily="/Cake;component/#mr_ITCSerifGothic" Background="{x:Null}" BorderBrush="{x:Null}" Click="Collect_buttom_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Page>

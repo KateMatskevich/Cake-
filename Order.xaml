@@ -1,0 +1,45 @@
+﻿<Page x:Class="Cake.Order"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cake.Properties"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="Order">
+
+    <Grid Background="#FF089E2A">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="101*"/>
+            <RowDefinition Height="283*"/>
+        </Grid.RowDefinitions>
+        <Rectangle HorizontalAlignment="Left" Height="279" Margin="333,37.9,-2,0" Stroke="{x:Null}" StrokeThickness="2" VerticalAlignment="Top" Width="1035" Fill="#FFFFEBCE" Grid.Row="1"/>
+        <Button Template="{StaticResource HelloArnold}" x:Name="Back_Button" Content="назад" HorizontalAlignment="Left" Height="71" Margin="33,13,0,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" RenderTransformOrigin="-3.289,-0.479" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Button Template="{StaticResource HelloArnold}" x:Name="GoOut_Button" Content="выйти" HorizontalAlignment="Left" Height="71" Margin="1124,12,-49,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Click="GoOut_Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="55" Margin="52,60,0,0" VerticalAlignment="Top" Width="33" Source="pack://application:,,,/img/str.png" RenderTransformOrigin="-1.844,0.86">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.627"/>
+                    <TranslateTransform X="82.835" Y="-127.296"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button Template="{StaticResource HelloArnold}" x:Name="Main_Button" Content="на главную" HorizontalAlignment="Center" Height="71" Margin="550,18,524,0" VerticalAlignment="Top" Width="292" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Click="Main_Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="417" Margin="81,195,0,0" VerticalAlignment="Top" Width="600" Source="pack://application:,,,/img/7.png" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="8.301"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Label Content="ЗАКАЗ" HorizontalAlignment="Left" Height="114" Margin="873,111,0,0" VerticalAlignment="Top" Width="300" Foreground="White" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="90" Grid.RowSpan="2"/>
+        <TextBox x:Name="Promotioncode_TextBox" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="57" Margin="879,340.9,0,0" TextWrapping="Wrap" Text="промокод" VerticalAlignment="Top" Width="303" SelectionBrush="{x:Null}" Foreground="White" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="40" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Row="1"/>
+        <Button Template="{StaticResource HelloArnold}" x:Name="Send_Button" Content="отправить" HorizontalAlignment="Left" Height="90" Margin="861,406.9,0,0" VerticalAlignment="Top" Width="351" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="70" Grid.Row="1"/>
+
+    </Grid>
+</Page>

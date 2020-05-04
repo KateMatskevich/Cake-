@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="51027307fc574d75a2b490d3b2aebc5f" Name="Diagram1" ZoomLevel="49">
+        <EntityTypeShape EntityType="CakeModel.Berries" Width="1.625" PointX="5.125" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.Biscuit" Width="1.5" PointX="3.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.Catalog" Width="1.5" PointX="0.875" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.Category" Width="1.5" PointX="1" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.Cream" Width="1.5" PointX="1.5" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.Custom_cake" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.Decoration" Width="1.5" PointX="1.625" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.Nuts" Width="1.5" PointX="5" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.Order" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.Order_cake" Width="1.5" PointX="3.125" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.Order_status" Width="1.5" PointX="6.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.Promotional_code" Width="1.5" PointX="6.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CakeModel.User" Width="1.5" PointX="8.125" PointY="6.25" IsExpanded="true" />
+        <AssociationConnector Association="CakeModel.FK__Decoratio__ID_be__5629CD9C" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="CakeModel.FK__Custom_ca__ID_bi__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="CakeModel.FK__Category__ID_Cat__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="CakeModel.FK__Order_cak__ID_ca__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="CakeModel.FK__Category__ID_Cus__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="CakeModel.FK__Custom_ca__ID_cr__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="CakeModel.FK__Custom_ca__ID_de__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="CakeModel.FK__Decoratio__ID_nu__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="CakeModel.FK__Order__ID_order___71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="CakeModel.FK__Order__ID_Order___72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="CakeModel.FK__Order__ID_Promot__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="CakeModel.FK__Order__ID_User__6FE99F9F" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

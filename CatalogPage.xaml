@@ -1,0 +1,55 @@
+﻿<Page x:Class="Cake.CatalogPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cake"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="catalog">
+
+    <Grid Background="#FF8363D6" Margin="-1,7,1,-7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="149*"/>
+            <RowDefinition Height="64*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="174*"/>
+            <ColumnDefinition Width="609*"/>
+            <ColumnDefinition Width="78*"/>
+            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="243*"/>
+            <ColumnDefinition Width="154*"/>
+        </Grid.ColumnDefinitions>
+        <Button Template="{StaticResource HelloArnold}" x:Name="Back_Button" Content="назад" HorizontalAlignment="Left" Height="71" Margin="33,7,0,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" RenderTransformOrigin="-3.289,-0.479" Background="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="2" Click="Back_Button_Click"/>
+        <Button Template="{StaticResource HelloArnold}" x:Name="GoOut_Button" Content="выйти" HorizontalAlignment="Left" Height="71" Margin="193,1,0,0" VerticalAlignment="Top" Width="200" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="4" Grid.ColumnSpan="2" Click="GoOut_Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="55" Margin="52,51,0,0" VerticalAlignment="Top" Width="33" Source="pack://application:,,,/img/str.png" RenderTransformOrigin="-1.844,0.86">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.627"/>
+                    <TranslateTransform X="82.835" Y="-127.296"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button x:Name="Cake_button" Template="{StaticResource HelloArnold}" Content="торты" HorizontalAlignment="Left" Height="72" Margin="48,54,0,0" VerticalAlignment="Top" Width="378" Foreground="White" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="50" Background="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="1" Click="Cake_button_Click"/>
+        <Button x:Name="Buns_button" Template="{StaticResource HelloArnold}" Content="выпечка" HorizontalAlignment="Left" Height="72" Margin="48,210,0,0" VerticalAlignment="Top" Width="378" Foreground="White" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="50" Background="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="1" Click="Buns_button_Click"/>
+        <Button x:Name="Capcakes_button" Template="{StaticResource HelloArnold}" Content="макаронс" HorizontalAlignment="Left" Height="72" Margin="48,366,0,0" VerticalAlignment="Top" Width="378" Foreground="White" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="50" Background="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="3" Grid.Column="3" Grid.Row="1" Click="Capcakes_button_Click"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="681" Margin="75,39,0,0" VerticalAlignment="Top" Width="3" Grid.Column="2" Grid.RowSpan="3"/>
+        <Label HorizontalAlignment="Center" Content="в&#xD;&#xA;ы&#xD;&#xA;б&#xD;&#xA;е&#xD;&#xA;р&#xD;&#xA;и&#xD;&#xA; &#xD;&#xA;к&#xD;&#xA;а&#xD;&#xA;т&#xD;&#xA;а&#xD;&#xA;л&#xD;&#xA;о&#xD;&#xA;г" Margin="7,40,19,52" FontFamily="/Cake;component/#mr_ITCSerifGothic" Foreground="White" FontSize="40" Width="52" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Height="676" Grid.Column="2" Grid.RowSpan="3"/>
+        <Image HorizontalAlignment="Left" Height="479" Margin="4,242,0,-82" VerticalAlignment="Top" Width="567" Source="pack://application:,,,/img/2.png" RenderTransformOrigin="0.5,0.5" Opacity="0.2" Grid.Column="1" Grid.Row="1" Grid.RowSpan="2">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image HorizontalAlignment="Left" Width="567" Source="img/2.png" Grid.Column="1" Grid.RowSpan="3" Margin="0,123,0,108"/>
+
+    </Grid>
+</Page>

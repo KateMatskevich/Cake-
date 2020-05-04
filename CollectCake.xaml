@@ -1,0 +1,51 @@
+﻿<Page x:Class="Cake.CollectCake"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cake"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="collect">
+
+    <Grid Background="#FF881F93">
+        <Button x:Name="Back_Button" Content="назад" HorizontalAlignment="Left" Height="71" Margin="39,12,0,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" RenderTransformOrigin="-3.289,-0.479" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <Button x:Name="GoOut_Button" Content="выйти" HorizontalAlignment="Left" Height="71" Margin="1169,14,-23,0" VerticalAlignment="Top" Width="220" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Click="GoOut_Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="55" Margin="58,60,0,0" VerticalAlignment="Top" Width="33" Source="pack://application:,,,/img/str.png" RenderTransformOrigin="-1.844,0.86">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="89.627"/>
+                    <TranslateTransform X="82.835" Y="-127.296"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button x:Name="Main_Button" Content="на главную" HorizontalAlignment="Left" Height="71" Margin="415,16,0,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.849,0.718" Click="Main_Button_Click"/>
+        <Button x:Name="Catalog_Button" Content="каталог" HorizontalAlignment="Left" Height="71" Margin="805,16,0,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.849,0.718" Click="Catalog_Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="293" Margin="837,357,0,0" VerticalAlignment="Top" Width="420"/>
+        <Label Content="т&#xD;&#xA;о&#xD;&#xA;р&#xD;&#xA;т" HorizontalAlignment="Center" Height="464" Margin="1271,141,29,163" VerticalAlignment="Center" Width="66" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="90" Opacity="0.3"/>
+        <Button x:Name="ToOrder_Button" Content="к заказу" HorizontalAlignment="Left" Height="71" Margin="1096,673,-21,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.849,0.718" Click="ToOrder_Button_Click"/>
+        <Button x:Name="Ok_Button" Content="ОК" HorizontalAlignment="Left" Height="140" Margin="633,562,0,0" VerticalAlignment="Top" Width="198" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="90" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" RenderTransformOrigin="0.849,0.718"/>
+        <Label Content="б&#xD;&#xA;и&#xD;&#xA;с&#xD;&#xA;к&#xD;&#xA;в&#xD;&#xA;и&#xD;&#xA;т" HorizontalAlignment="Left" Height="439" Margin="66,70,0,0" VerticalAlignment="Top" Width="44" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45" Foreground="White" RenderTransformOrigin="0.395,0.408"/>
+        <Label Content="у&#xD;&#xA;к&#xD;&#xA;р&#xD;&#xA;а&#xD;&#xA;ш&#xD;&#xA;е&#xD;&#xA;н&#xD;&#xA;и&#xD;&#xA;е" HorizontalAlignment="Center" Height="594" Margin="544,109,768,65" VerticalAlignment="Center" Width="54" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45" Foreground="White" RenderTransformOrigin="0.395,0.408"/>
+        <Label Content="к&#xD;&#xA;р&#xD;&#xA;е&#xD;&#xA;м" HorizontalAlignment="Left" Height="225" Margin="66,503,0,0" VerticalAlignment="Top" Width="44" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45" Foreground="White" RenderTransformOrigin="0.395,0.408"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="366" Margin="47,94,0,0" VerticalAlignment="Top" Width="7"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="366" Margin="115,94,0,0" VerticalAlignment="Top" Width="7"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="196" Margin="119,527,0,0" VerticalAlignment="Top" Width="7"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="196" Margin="47,529,0,0" VerticalAlignment="Top" Width="7"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="501" Margin="526,111,0,0" VerticalAlignment="Top" Width="7"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="501" Margin="599,111,0,0" VerticalAlignment="Top" Width="7"/>
+        <CheckBox Content="ванильный" HorizontalAlignment="Left" Height="52" Margin="136,96,0,0" VerticalAlignment="Top" Width="299" Background="White" BorderBrush="{x:Null}" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45"/>
+        <CheckBox Content="шоколадный" HorizontalAlignment="Left" Height="52" Margin="138,153,0,0" VerticalAlignment="Top" Width="299" Background="White" BorderBrush="{x:Null}" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45" />
+        <CheckBox Content="клубничный" HorizontalAlignment="Left" Height="52" Margin="140,207,0,0" VerticalAlignment="Top" Width="299" Background="White" BorderBrush="{x:Null}" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45" />
+        <CheckBox Content="ванильный" HorizontalAlignment="Left" Height="52" Margin="134,548,0,0" VerticalAlignment="Top" Width="299" Background="White" BorderBrush="{x:Null}" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45"/>
+        <CheckBox Content="шоколадный" HorizontalAlignment="Left" Height="52" Margin="136,605,0,0" VerticalAlignment="Top" Width="299" Background="White" BorderBrush="{x:Null}" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45" />
+        <CheckBox Content="клубничный" HorizontalAlignment="Left" Height="52" Margin="138,659,0,0" VerticalAlignment="Top" Width="299" Background="White" BorderBrush="{x:Null}" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45" />
+        <CheckBox Content="орехи" HorizontalAlignment="Left" Height="52" Margin="609,109,0,0" VerticalAlignment="Top" Width="299" Background="White" BorderBrush="{x:Null}" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45" />
+        <CheckBox Content="ягоды" HorizontalAlignment="Left" Height="52" Margin="609,161,0,0" VerticalAlignment="Top" Width="299" Background="White" BorderBrush="{x:Null}" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45" />
+        <CheckBox Content="печенье" HorizontalAlignment="Left" Height="52" Margin="609,213,0,0" VerticalAlignment="Top" Width="299" Background="White" BorderBrush="{x:Null}" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="45" />
+
+    </Grid>
+</Page>
+

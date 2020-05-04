@@ -1,0 +1,138 @@
+﻿<Page x:Class="Cake.Macarons"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/data:image/pjpeg;base64,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2008" 
+      xmlns:local="clr-namespace:Cake"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="macarons">
+
+    <Grid Background="#FF18A2A2">
+       
+        <Button  Template="{StaticResource HelloArnold}" x:Name="Back_Button" Content="назад" HorizontalAlignment="Left" Height="71" Margin="33,7,0,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" RenderTransformOrigin="-3.289,-0.479" Background="{x:Null}" BorderBrush="{x:Null}" Click="Back_Button_Click"/>
+        <Button x:Name="GoOut_Button" Content="выйти" HorizontalAlignment="Left" Margin="1124,12,-49,672" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Click="GoOut_Button_Click"/>
+        <Image HorizontalAlignment="Left" Height="55" Margin="52,51,0,0" VerticalAlignment="Top" Width="33" Source="pack://application:,,,/IMG/str.png" RenderTransformOrigin="-1.844,0.86">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="89.627"/>
+                    <TranslateTransform X="82.835" Y="-127.296"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Button Template="{StaticResource HelloArnold}" x:Name="Main_Button" Content="на главную" HorizontalAlignment="Left" Margin="485,0,0,667" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" Height="71" VerticalAlignment="Bottom" Click="Main_Button_Click"/>
+        <Button Template="{StaticResource HelloArnold}" HorizontalAlignment="Center" Content="т&#xA;о&#xA;р&#xA;т&#xA;ы&#xA;" Margin="1272,147,37,407" FontFamily="/Cake;component/#mr_ITCSerifGothic" Foreground="White" FontSize="30" Width="57" Padding="0" VerticalAlignment="Center" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Center" Height="198" Click="Button_Click"/>
+        <Button Template="{StaticResource HelloArnold}" x:Name="ToOrder_Button" Content="к заказу" HorizontalAlignment="Left" Height="71" Margin="14,681,0,0" VerticalAlignment="Top" Width="291" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" Background="{x:Null}" BorderBrush="{x:Null}" />
+        <Button Template="{StaticResource HelloArnold}" x:Name="Bans_Button" Content="в&#xA;ы&#xA;п&#xA;е&#xA;ч&#xA;к&#xA;а" HorizontalAlignment="Left" Height="430" Margin="1270,347,0,-25" VerticalAlignment="Top" Width="66" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="30" Foreground="White" RenderTransformOrigin="0.653,3.38" Background="{x:Null}" BorderBrush="{x:Null}" Click="Bans_Button_Click"/>
+        <Label  x:Name="Macaron" HorizontalContentAlignment="Center" Content="м&#xA;а&#xA;к&#xA;а&#xA;р&#xA;о&#xA;н&#xA;с" HorizontalAlignment="Left" Height="612" Margin="604,97,0,0" VerticalAlignment="Top" Width="64" FontFamily="/Cake;component/#mr_ITCSerifGothic" FontSize="50" Foreground="White" RenderTransformOrigin="0.653,3.38"  Background="{x:Null}" BorderBrush="{x:Null}"/>
+
+        <Button  Margin="333,92,813,449" BorderBrush="{x:Null}" Background="{x:Null}">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/img_20180821_163938_858.960x600.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Margin="107,274,1039,267" BorderBrush="{x:Null}" Background="{x:Null}">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/img_20180908_113105_839-1.960x600.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Margin="333,456,813,76" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/img_20180908_113135_904.960x600.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Margin="701,92,445,452" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="1.814,0.582">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/img_20180908_181323_401.960x600.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Margin="947,270,199,265" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="1.814,0.582">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/img_20181130_085641_003.960x600.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Margin="705,452,441,80" BorderBrush="{x:Null}" Background="{x:Null}" RenderTransformOrigin="1.814,0.582">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Stroke="{x:Null}"
+                            StrokeThickness="2">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="pack://application:,,,/img/img_20181111_161743_526.960x600.jpg" Stretch="UniformToFill"/>
+                            </Ellipse.Fill>
+
+                        </Ellipse>
+                        <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Page>

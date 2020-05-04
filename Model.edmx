@@ -1,0 +1,829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище CakeModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Berries">
+          <Key>
+            <PropertyRef Name="ID berries" />
+          </Key>
+          <Property Name="ID berries" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Biscuit">
+          <Key>
+            <PropertyRef Name="ID biscuit" />
+          </Key>
+          <Property Name="ID biscuit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Catalog">
+          <Key>
+            <PropertyRef Name="ID catalog" />
+          </Key>
+          <Property Name="ID catalog" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="Inform" Type="varchar" MaxLength="1" />
+          <Property Name="Type" Type="varchar" MaxLength="1" />
+          <Property Name="Photo" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID category" />
+          </Key>
+          <Property Name="ID category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID Custom cake" Type="int" />
+          <Property Name="ID Catalog" Type="int" />
+          <Property Name="Is cust" Type="int" />
+        </EntityType>
+        <EntityType Name="Cream">
+          <Key>
+            <PropertyRef Name="ID cream" />
+          </Key>
+          <Property Name="ID cream" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Custom cake">
+          <Key>
+            <PropertyRef Name="ID custom cake" />
+          </Key>
+          <Property Name="ID custom cake" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID biscuit" Type="int" />
+          <Property Name="ID cream" Type="int" />
+          <Property Name="ID decoration" Type="int" />
+          <Property Name="Weight" Type="float" />
+        </EntityType>
+        <EntityType Name="Decoration">
+          <Key>
+            <PropertyRef Name="ID decoration" />
+          </Key>
+          <Property Name="ID decoration" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID nuts" Type="int" />
+          <Property Name="ID berries" Type="int" />
+        </EntityType>
+        <EntityType Name="Nuts">
+          <Key>
+            <PropertyRef Name="ID nuts" />
+          </Key>
+          <Property Name="ID nuts" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="ID Order" />
+          </Key>
+          <Property Name="ID Order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID User" Type="int" />
+          <Property Name="ID Promotional Code" Type="int" />
+          <Property Name="Price" Type="money" />
+          <Property Name="ID order status" Type="int" />
+          <Property Name="ID Order Cake" Type="int" />
+        </EntityType>
+        <EntityType Name="Order cake">
+          <Key>
+            <PropertyRef Name="ID Order cake" />
+          </Key>
+          <Property Name="ID Order cake" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID category" Type="int" />
+          <Property Name="Quantity" Type="int" />
+        </EntityType>
+        <EntityType Name="Order status">
+          <Key>
+            <PropertyRef Name="ID Order status" />
+          </Key>
+          <Property Name="ID Order status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vaue" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Promotional code">
+          <Key>
+            <PropertyRef Name="ID Promotional Code" />
+          </Key>
+          <Property Name="ID Promotional Code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="int" />
+          <Property Name="Sale" Type="int" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID User" />
+          </Key>
+          <Property Name="ID User" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="16" />
+          <Property Name="Surname" Type="varchar" MaxLength="16" />
+          <Property Name="Phone" Type="numeric" Precision="12" Scale="0" />
+          <Property Name="Login" Type="varchar" MaxLength="18" />
+          <Property Name="Password" Type="varbinary" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK__Category__ID Cat__6383C8BA">
+          <End Role="Catalog" Type="Self.Catalog" Multiplicity="0..1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalog">
+              <PropertyRef Name="ID catalog" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="ID Catalog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Category__ID Cus__628FA481">
+          <End Role="Custom cake" Type="Self.Custom cake" Multiplicity="0..1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Custom cake">
+              <PropertyRef Name="ID custom cake" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="ID Custom cake" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Custom ca__ID bi__5CD6CB2B">
+          <End Role="Biscuit" Type="Self.Biscuit" Multiplicity="0..1" />
+          <End Role="Custom cake" Type="Self.Custom cake" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Biscuit">
+              <PropertyRef Name="ID biscuit" />
+            </Principal>
+            <Dependent Role="Custom cake">
+              <PropertyRef Name="ID biscuit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Custom ca__ID cr__5DCAEF64">
+          <End Role="Cream" Type="Self.Cream" Multiplicity="0..1" />
+          <End Role="Custom cake" Type="Self.Custom cake" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cream">
+              <PropertyRef Name="ID cream" />
+            </Principal>
+            <Dependent Role="Custom cake">
+              <PropertyRef Name="ID cream" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Custom ca__ID de__5EBF139D">
+          <End Role="Decoration" Type="Self.Decoration" Multiplicity="0..1" />
+          <End Role="Custom cake" Type="Self.Custom cake" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Decoration">
+              <PropertyRef Name="ID decoration" />
+            </Principal>
+            <Dependent Role="Custom cake">
+              <PropertyRef Name="ID decoration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Decoratio__ID be__5629CD9C">
+          <End Role="Berries" Type="Self.Berries" Multiplicity="0..1" />
+          <End Role="Decoration" Type="Self.Decoration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Berries">
+              <PropertyRef Name="ID berries" />
+            </Principal>
+            <Dependent Role="Decoration">
+              <PropertyRef Name="ID berries" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Decoratio__ID nu__5535A963">
+          <End Role="Nuts" Type="Self.Nuts" Multiplicity="0..1" />
+          <End Role="Decoration" Type="Self.Decoration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nuts">
+              <PropertyRef Name="ID nuts" />
+            </Principal>
+            <Dependent Role="Decoration">
+              <PropertyRef Name="ID nuts" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order cak__ID ca__6D0D32F4">
+          <End Role="Catalog" Type="Self.Catalog" Multiplicity="0..1" />
+          <End Role="Order cake" Type="Self.Order cake" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalog">
+              <PropertyRef Name="ID catalog" />
+            </Principal>
+            <Dependent Role="Order cake">
+              <PropertyRef Name="ID category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__ID order __71D1E811">
+          <End Role="Order status" Type="Self.Order status" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order status">
+              <PropertyRef Name="ID Order status" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID order status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__ID Order __72C60C4A">
+          <End Role="Order cake" Type="Self.Order cake" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order cake">
+              <PropertyRef Name="ID Order cake" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID Order Cake" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__ID Promot__70DDC3D8">
+          <End Role="Promotional code" Type="Self.Promotional code" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Promotional code">
+              <PropertyRef Name="ID Promotional Code" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID Promotional Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__ID User__6FE99F9F">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID User" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище CakeModelContainer">
+          <EntitySet Name="Berries" EntityType="Self.Berries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Biscuit" EntityType="Self.Biscuit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Catalog" EntityType="Self.Catalog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cream" EntityType="Self.Cream" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Custom cake" EntityType="Self.Custom cake" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Decoration" EntityType="Self.Decoration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nuts" EntityType="Self.Nuts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order cake" EntityType="Self.Order cake" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order status" EntityType="Self.Order status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Promotional code" EntityType="Self.Promotional code" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Category__ID Cat__6383C8BA" Association="Self.FK__Category__ID Cat__6383C8BA">
+            <End Role="Catalog" EntitySet="Catalog" />
+            <End Role="Category" EntitySet="Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Category__ID Cus__628FA481" Association="Self.FK__Category__ID Cus__628FA481">
+            <End Role="Custom cake" EntitySet="Custom cake" />
+            <End Role="Category" EntitySet="Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Custom ca__ID bi__5CD6CB2B" Association="Self.FK__Custom ca__ID bi__5CD6CB2B">
+            <End Role="Biscuit" EntitySet="Biscuit" />
+            <End Role="Custom cake" EntitySet="Custom cake" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Custom ca__ID cr__5DCAEF64" Association="Self.FK__Custom ca__ID cr__5DCAEF64">
+            <End Role="Cream" EntitySet="Cream" />
+            <End Role="Custom cake" EntitySet="Custom cake" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Custom ca__ID de__5EBF139D" Association="Self.FK__Custom ca__ID de__5EBF139D">
+            <End Role="Decoration" EntitySet="Decoration" />
+            <End Role="Custom cake" EntitySet="Custom cake" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Decoratio__ID be__5629CD9C" Association="Self.FK__Decoratio__ID be__5629CD9C">
+            <End Role="Berries" EntitySet="Berries" />
+            <End Role="Decoration" EntitySet="Decoration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Decoratio__ID nu__5535A963" Association="Self.FK__Decoratio__ID nu__5535A963">
+            <End Role="Nuts" EntitySet="Nuts" />
+            <End Role="Decoration" EntitySet="Decoration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order cak__ID ca__6D0D32F4" Association="Self.FK__Order cak__ID ca__6D0D32F4">
+            <End Role="Catalog" EntitySet="Catalog" />
+            <End Role="Order cake" EntitySet="Order cake" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__ID order __71D1E811" Association="Self.FK__Order__ID order __71D1E811">
+            <End Role="Order status" EntitySet="Order status" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__ID Order __72C60C4A" Association="Self.FK__Order__ID Order __72C60C4A">
+            <End Role="Order cake" EntitySet="Order cake" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__ID Promot__70DDC3D8" Association="Self.FK__Order__ID Promot__70DDC3D8">
+            <End Role="Promotional code" EntitySet="Promotional code" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__ID User__6FE99F9F" Association="Self.FK__Order__ID User__6FE99F9F">
+            <End Role="User" EntitySet="User" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CakeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Berries">
+          <Key>
+            <PropertyRef Name="ID_berries" />
+          </Key>
+          <Property Name="ID_berries" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Decoration" Relationship="Self.FK__Decoratio__ID_be__5629CD9C" FromRole="Berries" ToRole="Decoration" />
+        </EntityType>
+        <EntityType Name="Biscuit">
+          <Key>
+            <PropertyRef Name="ID_biscuit" />
+          </Key>
+          <Property Name="ID_biscuit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Custom_cake" Relationship="Self.FK__Custom_ca__ID_bi__5CD6CB2B" FromRole="Biscuit" ToRole="Custom_cake" />
+        </EntityType>
+        <EntityType Name="Catalog">
+          <Key>
+            <PropertyRef Name="ID_catalog" />
+          </Key>
+          <Property Name="ID_catalog" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="Inform" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Category__ID_Cat__6383C8BA" FromRole="Catalog" ToRole="Category" />
+          <NavigationProperty Name="Order_cake" Relationship="Self.FK__Order_cak__ID_ca__6D0D32F4" FromRole="Catalog" ToRole="Order_cake" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="ID_category" />
+          </Key>
+          <Property Name="ID_category" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Custom_cake" Type="Int32" />
+          <Property Name="ID_Catalog" Type="Int32" />
+          <Property Name="Is_cust" Type="Int32" />
+          <NavigationProperty Name="Catalog" Relationship="Self.FK__Category__ID_Cat__6383C8BA" FromRole="Category" ToRole="Catalog" />
+          <NavigationProperty Name="Custom_cake" Relationship="Self.FK__Category__ID_Cus__628FA481" FromRole="Category" ToRole="Custom_cake" />
+        </EntityType>
+        <EntityType Name="Cream">
+          <Key>
+            <PropertyRef Name="ID_cream" />
+          </Key>
+          <Property Name="ID_cream" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Custom_cake" Relationship="Self.FK__Custom_ca__ID_cr__5DCAEF64" FromRole="Cream" ToRole="Custom_cake" />
+        </EntityType>
+        <EntityType Name="Custom_cake">
+          <Key>
+            <PropertyRef Name="ID_custom_cake" />
+          </Key>
+          <Property Name="ID_custom_cake" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_biscuit" Type="Int32" />
+          <Property Name="ID_cream" Type="Int32" />
+          <Property Name="ID_decoration" Type="Int32" />
+          <Property Name="Weight" Type="Double" />
+          <NavigationProperty Name="Biscuit" Relationship="Self.FK__Custom_ca__ID_bi__5CD6CB2B" FromRole="Custom_cake" ToRole="Biscuit" />
+          <NavigationProperty Name="Category" Relationship="Self.FK__Category__ID_Cus__628FA481" FromRole="Custom_cake" ToRole="Category" />
+          <NavigationProperty Name="Cream" Relationship="Self.FK__Custom_ca__ID_cr__5DCAEF64" FromRole="Custom_cake" ToRole="Cream" />
+          <NavigationProperty Name="Decoration" Relationship="Self.FK__Custom_ca__ID_de__5EBF139D" FromRole="Custom_cake" ToRole="Decoration" />
+        </EntityType>
+        <EntityType Name="Decoration">
+          <Key>
+            <PropertyRef Name="ID_decoration" />
+          </Key>
+          <Property Name="ID_decoration" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_nuts" Type="Int32" />
+          <Property Name="ID_berries" Type="Int32" />
+          <NavigationProperty Name="Berries" Relationship="Self.FK__Decoratio__ID_be__5629CD9C" FromRole="Decoration" ToRole="Berries" />
+          <NavigationProperty Name="Custom_cake" Relationship="Self.FK__Custom_ca__ID_de__5EBF139D" FromRole="Decoration" ToRole="Custom_cake" />
+          <NavigationProperty Name="Nuts" Relationship="Self.FK__Decoratio__ID_nu__5535A963" FromRole="Decoration" ToRole="Nuts" />
+        </EntityType>
+        <EntityType Name="Nuts">
+          <Key>
+            <PropertyRef Name="ID_nuts" />
+          </Key>
+          <Property Name="ID_nuts" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Decoration" Relationship="Self.FK__Decoratio__ID_nu__5535A963" FromRole="Nuts" ToRole="Decoration" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="ID_Order" />
+          </Key>
+          <Property Name="ID_Order" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_User" Type="Int32" />
+          <Property Name="ID_Promotional_Code" Type="Int32" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ID_order_status" Type="Int32" />
+          <Property Name="ID_Order_Cake" Type="Int32" />
+          <NavigationProperty Name="Order_status" Relationship="Self.FK__Order__ID_order___71D1E811" FromRole="Order" ToRole="Order_status" />
+          <NavigationProperty Name="Order_cake" Relationship="Self.FK__Order__ID_Order___72C60C4A" FromRole="Order" ToRole="Order_cake" />
+          <NavigationProperty Name="Promotional_code" Relationship="Self.FK__Order__ID_Promot__70DDC3D8" FromRole="Order" ToRole="Promotional_code" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Order__ID_User__6FE99F9F" FromRole="Order" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Order_cake">
+          <Key>
+            <PropertyRef Name="ID_Order_cake" />
+          </Key>
+          <Property Name="ID_Order_cake" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_category" Type="Int32" />
+          <Property Name="Quantity" Type="Int32" />
+          <NavigationProperty Name="Catalog" Relationship="Self.FK__Order_cak__ID_ca__6D0D32F4" FromRole="Order_cake" ToRole="Catalog" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Order__ID_Order___72C60C4A" FromRole="Order_cake" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Order_status">
+          <Key>
+            <PropertyRef Name="ID_Order_status" />
+          </Key>
+          <Property Name="ID_Order_status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vaue" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Order__ID_order___71D1E811" FromRole="Order_status" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Promotional_code">
+          <Key>
+            <PropertyRef Name="ID_Promotional_Code" />
+          </Key>
+          <Property Name="ID_Promotional_Code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="Int32" />
+          <Property Name="Sale" Type="Int32" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Order__ID_Promot__70DDC3D8" FromRole="Promotional_code" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Surname" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="Decimal" Precision="12" Scale="0" />
+          <Property Name="Login" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="Binary" MaxLength="20" FixedLength="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__Order__ID_User__6FE99F9F" FromRole="User" ToRole="Order" />
+        </EntityType>
+        <Association Name="FK__Decoratio__ID_be__5629CD9C">
+          <End Role="Berries" Type="Self.Berries" Multiplicity="0..1" />
+          <End Role="Decoration" Type="Self.Decoration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Berries">
+              <PropertyRef Name="ID_berries" />
+            </Principal>
+            <Dependent Role="Decoration">
+              <PropertyRef Name="ID_berries" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Custom_ca__ID_bi__5CD6CB2B">
+          <End Role="Biscuit" Type="Self.Biscuit" Multiplicity="0..1" />
+          <End Role="Custom_cake" Type="Self.Custom_cake" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Biscuit">
+              <PropertyRef Name="ID_biscuit" />
+            </Principal>
+            <Dependent Role="Custom_cake">
+              <PropertyRef Name="ID_biscuit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Category__ID_Cat__6383C8BA">
+          <End Role="Catalog" Type="Self.Catalog" Multiplicity="0..1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalog">
+              <PropertyRef Name="ID_catalog" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="ID_Catalog" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_cak__ID_ca__6D0D32F4">
+          <End Role="Catalog" Type="Self.Catalog" Multiplicity="0..1" />
+          <End Role="Order_cake" Type="Self.Order_cake" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Catalog">
+              <PropertyRef Name="ID_catalog" />
+            </Principal>
+            <Dependent Role="Order_cake">
+              <PropertyRef Name="ID_category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Category__ID_Cus__628FA481">
+          <End Role="Custom_cake" Type="Self.Custom_cake" Multiplicity="0..1" />
+          <End Role="Category" Type="Self.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Custom_cake">
+              <PropertyRef Name="ID_custom_cake" />
+            </Principal>
+            <Dependent Role="Category">
+              <PropertyRef Name="ID_Custom_cake" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Custom_ca__ID_cr__5DCAEF64">
+          <End Role="Cream" Type="Self.Cream" Multiplicity="0..1" />
+          <End Role="Custom_cake" Type="Self.Custom_cake" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cream">
+              <PropertyRef Name="ID_cream" />
+            </Principal>
+            <Dependent Role="Custom_cake">
+              <PropertyRef Name="ID_cream" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Custom_ca__ID_de__5EBF139D">
+          <End Role="Decoration" Type="Self.Decoration" Multiplicity="0..1" />
+          <End Role="Custom_cake" Type="Self.Custom_cake" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Decoration">
+              <PropertyRef Name="ID_decoration" />
+            </Principal>
+            <Dependent Role="Custom_cake">
+              <PropertyRef Name="ID_decoration" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Decoratio__ID_nu__5535A963">
+          <End Role="Nuts" Type="Self.Nuts" Multiplicity="0..1" />
+          <End Role="Decoration" Type="Self.Decoration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Nuts">
+              <PropertyRef Name="ID_nuts" />
+            </Principal>
+            <Dependent Role="Decoration">
+              <PropertyRef Name="ID_nuts" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__ID_order___71D1E811">
+          <End Role="Order_status" Type="Self.Order_status" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_status">
+              <PropertyRef Name="ID_Order_status" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_order_status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__ID_Order___72C60C4A">
+          <End Role="Order_cake" Type="Self.Order_cake" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_cake">
+              <PropertyRef Name="ID_Order_cake" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_Order_Cake" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__ID_Promot__70DDC3D8">
+          <End Role="Promotional_code" Type="Self.Promotional_code" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Promotional_code">
+              <PropertyRef Name="ID_Promotional_Code" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_Promotional_Code" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order__ID_User__6FE99F9F">
+          <End Role="User" Type="Self.User" Multiplicity="0..1" />
+          <End Role="Order" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CakeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Berries" EntityType="Self.Berries" />
+          <EntitySet Name="Biscuit" EntityType="Self.Biscuit" />
+          <EntitySet Name="Catalog" EntityType="Self.Catalog" />
+          <EntitySet Name="Category" EntityType="Self.Category" />
+          <EntitySet Name="Cream" EntityType="Self.Cream" />
+          <EntitySet Name="Custom_cake" EntityType="Self.Custom_cake" />
+          <EntitySet Name="Decoration" EntityType="Self.Decoration" />
+          <EntitySet Name="Nuts" EntityType="Self.Nuts" />
+          <EntitySet Name="Order" EntityType="Self.Order" />
+          <EntitySet Name="Order_cake" EntityType="Self.Order_cake" />
+          <EntitySet Name="Order_status" EntityType="Self.Order_status" />
+          <EntitySet Name="Promotional_code" EntityType="Self.Promotional_code" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK__Decoratio__ID_be__5629CD9C" Association="Self.FK__Decoratio__ID_be__5629CD9C">
+            <End Role="Berries" EntitySet="Berries" />
+            <End Role="Decoration" EntitySet="Decoration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Custom_ca__ID_bi__5CD6CB2B" Association="Self.FK__Custom_ca__ID_bi__5CD6CB2B">
+            <End Role="Biscuit" EntitySet="Biscuit" />
+            <End Role="Custom_cake" EntitySet="Custom_cake" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Category__ID_Cat__6383C8BA" Association="Self.FK__Category__ID_Cat__6383C8BA">
+            <End Role="Catalog" EntitySet="Catalog" />
+            <End Role="Category" EntitySet="Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_cak__ID_ca__6D0D32F4" Association="Self.FK__Order_cak__ID_ca__6D0D32F4">
+            <End Role="Catalog" EntitySet="Catalog" />
+            <End Role="Order_cake" EntitySet="Order_cake" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Category__ID_Cus__628FA481" Association="Self.FK__Category__ID_Cus__628FA481">
+            <End Role="Custom_cake" EntitySet="Custom_cake" />
+            <End Role="Category" EntitySet="Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Custom_ca__ID_cr__5DCAEF64" Association="Self.FK__Custom_ca__ID_cr__5DCAEF64">
+            <End Role="Cream" EntitySet="Cream" />
+            <End Role="Custom_cake" EntitySet="Custom_cake" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Custom_ca__ID_de__5EBF139D" Association="Self.FK__Custom_ca__ID_de__5EBF139D">
+            <End Role="Decoration" EntitySet="Decoration" />
+            <End Role="Custom_cake" EntitySet="Custom_cake" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Decoratio__ID_nu__5535A963" Association="Self.FK__Decoratio__ID_nu__5535A963">
+            <End Role="Nuts" EntitySet="Nuts" />
+            <End Role="Decoration" EntitySet="Decoration" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__ID_order___71D1E811" Association="Self.FK__Order__ID_order___71D1E811">
+            <End Role="Order_status" EntitySet="Order_status" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__ID_Order___72C60C4A" Association="Self.FK__Order__ID_Order___72C60C4A">
+            <End Role="Order_cake" EntitySet="Order_cake" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__ID_Promot__70DDC3D8" Association="Self.FK__Order__ID_Promot__70DDC3D8">
+            <End Role="Promotional_code" EntitySet="Promotional_code" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order__ID_User__6FE99F9F" Association="Self.FK__Order__ID_User__6FE99F9F">
+            <End Role="User" EntitySet="User" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище CakeModelContainer" CdmEntityContainer="CakeEntities">
+          <EntitySetMapping Name="Berries">
+            <EntityTypeMapping TypeName="CakeModel.Berries">
+              <MappingFragment StoreEntitySet="Berries">
+                <ScalarProperty Name="ID_berries" ColumnName="ID berries" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Biscuit">
+            <EntityTypeMapping TypeName="CakeModel.Biscuit">
+              <MappingFragment StoreEntitySet="Biscuit">
+                <ScalarProperty Name="ID_biscuit" ColumnName="ID biscuit" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Catalog">
+            <EntityTypeMapping TypeName="CakeModel.Catalog">
+              <MappingFragment StoreEntitySet="Catalog">
+                <ScalarProperty Name="ID_catalog" ColumnName="ID catalog" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Inform" ColumnName="Inform" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Category">
+            <EntityTypeMapping TypeName="CakeModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="ID_category" ColumnName="ID category" />
+                <ScalarProperty Name="ID_Custom_cake" ColumnName="ID Custom cake" />
+                <ScalarProperty Name="ID_Catalog" ColumnName="ID Catalog" />
+                <ScalarProperty Name="Is_cust" ColumnName="Is cust" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cream">
+            <EntityTypeMapping TypeName="CakeModel.Cream">
+              <MappingFragment StoreEntitySet="Cream">
+                <ScalarProperty Name="ID_cream" ColumnName="ID cream" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Custom_cake">
+            <EntityTypeMapping TypeName="CakeModel.Custom_cake">
+              <MappingFragment StoreEntitySet="Custom cake">
+                <ScalarProperty Name="ID_custom_cake" ColumnName="ID custom cake" />
+                <ScalarProperty Name="ID_biscuit" ColumnName="ID biscuit" />
+                <ScalarProperty Name="ID_cream" ColumnName="ID cream" />
+                <ScalarProperty Name="ID_decoration" ColumnName="ID decoration" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Decoration">
+            <EntityTypeMapping TypeName="CakeModel.Decoration">
+              <MappingFragment StoreEntitySet="Decoration">
+                <ScalarProperty Name="ID_decoration" ColumnName="ID decoration" />
+                <ScalarProperty Name="ID_nuts" ColumnName="ID nuts" />
+                <ScalarProperty Name="ID_berries" ColumnName="ID berries" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nuts">
+            <EntityTypeMapping TypeName="CakeModel.Nuts">
+              <MappingFragment StoreEntitySet="Nuts">
+                <ScalarProperty Name="ID_nuts" ColumnName="ID nuts" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order">
+            <EntityTypeMapping TypeName="CakeModel.Order">
+              <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="ID_Order" ColumnName="ID Order" />
+                <ScalarProperty Name="ID_User" ColumnName="ID User" />
+                <ScalarProperty Name="ID_Promotional_Code" ColumnName="ID Promotional Code" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ID_order_status" ColumnName="ID order status" />
+                <ScalarProperty Name="ID_Order_Cake" ColumnName="ID Order Cake" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_cake">
+            <EntityTypeMapping TypeName="CakeModel.Order_cake">
+              <MappingFragment StoreEntitySet="Order cake">
+                <ScalarProperty Name="ID_Order_cake" ColumnName="ID Order cake" />
+                <ScalarProperty Name="ID_category" ColumnName="ID category" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_status">
+            <EntityTypeMapping TypeName="CakeModel.Order_status">
+              <MappingFragment StoreEntitySet="Order status">
+                <ScalarProperty Name="ID_Order_status" ColumnName="ID Order status" />
+                <ScalarProperty Name="Vaue" ColumnName="Vaue" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Promotional_code">
+            <EntityTypeMapping TypeName="CakeModel.Promotional_code">
+              <MappingFragment StoreEntitySet="Promotional code">
+                <ScalarProperty Name="ID_Promotional_Code" ColumnName="ID Promotional Code" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Sale" ColumnName="Sale" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="CakeModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ID_User" ColumnName="ID User" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
